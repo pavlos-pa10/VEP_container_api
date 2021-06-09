@@ -61,6 +61,7 @@ Do not refresh or leave the window after pressing Submit while VEP is running. \
 If you do leave the window or close it by accident, you can still find the annotations after a few minutes at:\
 `http://localhost/api/annotations`
 
+Press `Ctrl-C` when you wish to stop the flask server from running. 
 
 ## API execution examples using curl
 From the same directory (vep_api):
