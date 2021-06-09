@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Upload VCF file for VEP annotation.</h1>
+<p>Please select VCF file from your computer and then press Submit. Once submitted VEP will run to annotate the file.</p>
+<p>The results will be presented here. Please wait and do not leave this page. </p>
 <div class="formdiv">
     <form action = "http://localhost:5000/api/upload" method = "POST" 
     enctype = "multipart/form-data">

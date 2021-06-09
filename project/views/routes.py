@@ -46,16 +46,16 @@ def  upload():
           flash("You must select a valid VCF file")
           return redirect(url_for('views.index'))
       else:
+        
         f.save(os.path.join(current_app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
         vcf_file=f.filename 
-        
+        session['vcf_file']=vcf_file
         client=start_docker_vep_container()
         run_vep_docker(client,vcf_file)
+        parse_vep_output(current_app.config['UPLOAD_FOLDER']+"/annotation_vep.txt")
+        return redirect(url_for('views.api_annotations'))
         
-       
 
-    return redirect(url_for('views.api_annotations'))
-    
 
 @views_blueprint.route('/annotations', methods = ['GET'])
 def view_annotations():
@@ -71,7 +71,6 @@ def view_annotations():
 @views_blueprint.route('/api/annotations', methods = ['GET'])
 def api_annotations():
     current_app.config['JSON_SORT_KEYS'] = False
-    parse_vep_output(current_app.config['UPLOAD_FOLDER']+"/annotation_vep.txt")
     json_file=current_app.config['UPLOAD_FOLDER']+"/vep_output.json"
     data = json.load(open(json_file))
     return jsonify(data)
@@ -98,11 +97,11 @@ def generate_docker_command(vcf_file):
     return command
 
 
-# Run VEP container image with the command generated, detach=True to not wait for it to finish and remove=True to remove image after execution
+# Run VEP container image with the command generated, detach=False to wait for it to finish and remove=True to remove image after execution
 def run_vep_docker(client,file_location):
     command=generate_docker_command(file_location)
     volumes={current_app.config['UPLOAD_FOLDER'] : {'bind': current_app.config['VEP_PATH'], 'mode': 'rw'}}
-    container=client.containers.run('ensemblorg/ensembl-vep', command, volumes=volumes, detach=True, remove=True)
+    container=client.containers.run('ensemblorg/ensembl-vep', command, volumes=volumes, detach=False, remove=True)
     return container
     
 # Parse VEP output to produce json format to be returned from API
