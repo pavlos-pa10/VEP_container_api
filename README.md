@@ -13,8 +13,8 @@ This API requires two main components. A Flask REST API and the docker image for
 Please follow the installation steps below to install these two main components. 
 
 ## Main Dependencies
-Python 3 Tested with Python 3.9\
-Flask\
+Python 3 (Tested with Python 3.9) \
+Flask \
 Docker image: `ensemblorg/ensembl-vep:latest`
 
 ## Installation
@@ -67,7 +67,9 @@ From the same directory (vep_api):
 
 ### Upload VCF - POST
 ```
-curl -F "file=@test_vcf/homo_sapiens_GRCh38.vcf" http://127.0.0.1:5000/api/upload
+curl -F "file=@test_vcf/homo_sapiens_GRCh38.vcf" http://127.0.0.1:5000/api/upload 
+
+Response:
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <title>Redirecting...</title>
 <h1>Redirecting...</h1>
@@ -77,6 +79,7 @@ curl -F "file=@test_vcf/homo_sapiens_GRCh38.vcf" http://127.0.0.1:5000/api/uploa
 ```
 curl http://127.0.0.1:5000/api/annotations
 
+Response:
 {"VEP_version":"v104.3","run_date":"2021-06-09 18:09:13","results":[{"#Uploaded_variation":"rs7289170","Location":{"chromosome":"22","start":"17181903","end":"17181903"},"Allele":"G","Gene":"ENSG00000093072","Feature":"ENST00000262607","Feature_type":"Transcript","Consequence":"synonymous_variant","cDNA_position":"1571","CDS_position":"1359","Protein_position":"453","Amino_acids":"Y","Codons":"taT/taC","Existing_variation":"-","Extra":"IMPACT=LOW;STRAND=-1"},{"#Uploaded_variation":"rs7289170","Location":{"chromosome":"22","start":"17181903","end":"17181903"},"Allele":"G","Gene":"ENSG00000093072","Feature":"ENST00000330232","Feature_type":"Transcript","Consequence":"synonymous_variant","cDNA_position":"841","CDS_position":"636","Protei...}
 ```
 ## Testing 
@@ -85,3 +88,5 @@ The tests and the coverage of the code can be viewed by running:
 
 ## Authors
 `Pavlos Antoniou @pavlos-pa10`
+
+
