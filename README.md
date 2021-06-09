@@ -56,10 +56,10 @@ Click on VCF_upload from navigation menu. This will take you to `http://localhos
 Select a VCF file from your computer or select the example vcf within the repository in the directory `./test_vcf/homo_sapiens_GRCh38.vcf` \
 
 Click Submit. This will post your VCF to server and upload it for VEP. The VEP container starts running with this input VCF. \
-Wait until the VEP container completes and the annotations will be presented as json in the same window at `http://127.0.0.1:5000/api/annotations`.\
+Wait until the VEP container completes and the annotations will be presented as json in the same window at `http://localhost/api/annotations`.\
 Do not refresh or leave the window after pressing Submit while VEP is running. \
 If you do leave the window or close it by accident, you can still find the annotations after a few minutes at:\
-`http://127.0.0.1:5000/api/annotations`
+`http://localhost/api/annotations`
 
 
 ## API execution examples using curl
