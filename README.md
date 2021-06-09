@@ -20,8 +20,8 @@ Docker image: `ensemblorg/ensembl-vep:latest`
 ## Installation
 
 ### Part 1 of 2: VEP docker installation and local cache databases setup
-1. Install docker for your operating system from here: ([Get Docker | Docker Documentation](https://docs.docker.com/get-docker/)\
-2. Pull the vep image and create cache directory\
+1. Install docker for your operating system from here: (`https://docs.docker.com/get-docker/`) \
+2. Pull the vep image and create cache directory \
 ```
 docker pull ensemblorg/ensembl-vep
 mkdir $HOME/vep_data
