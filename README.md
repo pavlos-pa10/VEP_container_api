@@ -85,8 +85,10 @@ Response:
 ```
 ## Testing 
 The tests and the coverage of the code can be viewed by running:
-`pytest --cov=project`
+```
+pytest --cov=project
 
+```
 ## Authors
 `Pavlos Antoniou @pavlos-pa10`
 
