@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Upload VCF file for VEP annotation.</h1>
+<div class="formdiv">
+    <form action = "http://localhost:5000/api/upload" method = "POST" 
+    enctype = "multipart/form-data">
+    <input type = "file" name = "file" accept=".vcf,.vcf.gz" /><br>
+    <input type = "submit"/>
+ </form>   
+</div>
+{% endblock %}

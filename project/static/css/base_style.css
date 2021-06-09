@@ -1,0 +1,118 @@
+body            { font-family: sans-serif; background: #eee; }
+a, h1, h2       { color: #377ba8; }
+h1, h2          { font-family: 'Georgia', serif; margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+
+.page           { margin: 2em auto; width: 35em; border: 5px solid #ccc;
+                  padding: 0.8em; background: white; }
+.entries        { list-style: none; margin: 0; padding: 0; }
+.entries li     { margin: 0.8em 1.2em; }
+.entries li h2  { margin-left: -1em; }
+.add-entry      { font-size: 0.9em; border-bottom: 1px solid #ccc; }
+.add-entry dl   { font-weight: bold; }
+.metanav        { text-align: right; font-size: 0.8em; padding: 0.3em;
+                  margin-bottom: 1em; background: #fafafa; }
+.flash          { background: #cee5F5; padding: 0.5em;
+                  border: 1px solid #aacbe2; }
+.error          { background: #f0d6d6; padding: 0.5em; }
+
+.formdiv {
+  width: 300px;
+  border: 5px solid rgb(19, 25, 29);
+  padding: 50px;
+  margin: 20px;
+}
+a,
+a:visited {
+  color: blue;
+}
+
+a:hover {
+  color: darkblue;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  margin-bottom: var(--spacer);
+  font-size: 1.65rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+/* Header Styling
+   ****************/
+.site-header {
+  background-color: #121212;
+  padding: 24px 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--gutters);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.nav-item {
+  text-decoration: none;
+  margin: auto 0;
+}
+
+.nav-item + .nav-item {
+  margin-left: 1.5rem;
+}
+
+.nav-link,
+.nav-link:visited,
+.nav-link:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.logo {
+  font-size: 1.4rem;
+}
+
+.nav-list .nav-link {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.flash-message {
+  background: #38cfd9;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem var(--gutters);
+  transition: opacity 1s;
+}
+
+.flash-message p,
+.flash-message span {
+  font-size: 1.1rem;
+}
+
+.flash-message-error {
+  background: red;
+  color: white;
+}
+
+.flash-message-success {
+  background: green;
+  color: white;
+}
+
+.flash-message-info {
+  background: blue;
+  color: white;
+}

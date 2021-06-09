@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>About the API for VEP</h1>
+
+<h2></h2>
+<p> This API allows the user to upload a VCF file. </p>
+<p>Then the dockerized VEP application is called and the result of the container run is the annotation of the VCF file. This annotation is  then parsed and converted to json format and is 
+    displayed to the user. 
+</p>
+{% endblock %}
