@@ -6,7 +6,7 @@
 This Flask API allows the user to upload a VCF file to the server. Once the VCF file is uploaded a call to 
 the docker container of ensemblorg/ensembl-vep is made with the uploaded VCF file as input. \
 Once the VEP execution ends, the resulting annotation is parsed into json format and returned as a json response
-through the flask API to the user. \
+through the flask API to the user. 
 
 ## Getting Started
 This API requires two main components. A Flask REST API and the docker image for VEP. \
@@ -21,14 +21,15 @@ Docker image: `ensemblorg/ensembl-vep:latest`
 
 ### Part 1 of 2: VEP docker installation and local cache databases setup
 1. Install docker for your operating system from here: (`https://docs.docker.com/get-docker/`) \
-2. Pull the vep image and create cache directory \
+2. Pull the vep image and create cache directory 
 ```
 docker pull ensemblorg/ensembl-vep
 mkdir $HOME/vep_data
 chmod a+rwx $HOME/vep_data
 ```
 
-3. Install the reference genome (human genome) databases and the available plugins in your local --cache directory. This will take a while but it is best to install these prior to running the API and the files are needed to run VEP for annotation. \
+3. Install the reference genome (human genome) databases and the available plugins in your local --cache directory. \
+This will take a while but it is necessary. It is best to install these prior to running the API and these files are needed to run VEP for annotation. 
 ```
 docker run -t -i -v $HOME/vep_data:/opt/vep/.vep ensemblorg/ensembl-vep perl INSTALL.pl -a cfp -s homo_sapiens -y GRCh38 -g all
 ```
@@ -53,12 +54,13 @@ flask run
 
 Go to `http://127.0.0.1:5000/` or `http://localhost:5000/` \
 Click on VCF_upload from navigation menu. This will take you to `http://localhost:5000/api/upload` \
-Select a VCF file from your computer or select the example vcf within the repository in the directory `./test_vcf/homo_sapiens_GRCh38.vcf` \
+Select a VCF file from your computer or select the example vcf within the repository in the directory `./test_vcf/homo_sapiens_GRCh38.vcf` 
 
 Click Submit. This will post your VCF to server and upload it for VEP. The VEP container starts running with this input VCF. \
 Wait until the VEP container completes and the annotations will be presented as json in the same window at `http://localhost/api/annotations`.\
 Do not refresh or leave the window after pressing Submit while VEP is running. \
-If you do leave the window or close it by accident, you can still find the annotations after a few minutes at:\
+If you do leave the window or close it by accident, you can still find the annotations after a few minutes at:
+
 `http://localhost/api/annotations`
 
 Press `Ctrl-C` when you wish to stop the flask server from running. 
